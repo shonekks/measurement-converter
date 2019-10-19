@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>	<title>Area and Volume of Cone</title>	</head>
+<body><center>
+<form name="myform" method="post" action="#">
+	<label for="radius">Radius</label>&emsp;&emsp;
+		<input type="text" id="radius" placeholder="Enter Radius"><br><br>
+	<label for="height">Height</label>&emsp;&emsp;
+		<input type="text" id="height" placeholder="Enter Height"><br><br>
+	<input type="button" id="area" value="Area">&emsp;&emsp;	
+	<input type="button" id="volume" value="Volume"><br><br>
+	<p id="result"></p>
+</form>
+<script type="text/javascript">
+	val=0;
+	var calcArea=function()
+	{	
+		r=parseFloat(document.getElementById("radius").value);
+		h=parseFloat(document.getElementById("height").value);
+		if(isNaN(r) || isNaN(h))
+    		alert("Enter valid height and radius!!");
+    	else
+    		document.getElementById("result").innerHTML="Surface Area : "+Math.PI*r*(r+Math.sqrt(Math.sqrt(h)+Math.sqrt(r)))+" m<sup>2</sup>";
+	}
+	var calcVolume=function()
+	{
+		r=parseFloat(document.getElementById("radius").value);
+		h=parseFloat(document.getElementById("height").value);
+		if(isNaN(r) || isNaN(h))
+    		alert("Enter valid height and radius!!");
+    	else
+    		document.getElementById("result").innerHTML="Volume : "+Math.PI*Math.sqrt(r)*(h/3)+" m<sup>2</sup>";
+	}
+	document.getElementById("area").addEventListener("dblclick",calcArea);
+   	document.getElementById("volume").onmouseover = calcVolume;
+</script>
+</body>
+</html>
